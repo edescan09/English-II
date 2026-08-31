@@ -13,8 +13,8 @@ A public web page with six sections:
 
 | Section | What goes there |
 |---|---|
-| Home | Edisson Cantor, your role, your links |
-| About | Two or three sentences about you |
+| Home | Edisson Cantor, Estudiante, your links |
+| About | Soy estudiante de la universidad Uniespinal, futuro técnico en programación web|
 | Skills | Your technical and professional skills |
 | Resume | Your education and your experience |
 | Projects | The projects you have built |
