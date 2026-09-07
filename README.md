@@ -13,8 +13,8 @@ A public web page with six sections:
 
 | Section | What goes there |
 |---|---|
-| Home | Edisson Cantor, Estudiante, your links |
-| About | Soy estudiante de la universidad Uniespinal, futuro técnico en programación web|
+| Home | Edisson Esteban Cantor Padilla, Student, your links |
+| About | I’m an 18-year-old young adult who enjoys creating personal projects to practice my programming skills. I’m a student at Uniespinal University and a future web programming technician. |
 | Skills | Your technical and professional skills |
 | Resume | Your education and your experience |
 | Projects | The projects you have built |
