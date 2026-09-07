@@ -13,7 +13,9 @@ A public web page with six sections:
 
 | Section | What goes there |
 |---|---|
-| Home | Edisson Esteban Cantor Padilla, Student, Github's profile:(https://github.com/edescan09);LinkedIn: (https://www.linkedin.com/in/edisson-esteban-cantor-padilla-ba79a3428?utm_source=share_via&utm_content=profile&utm_medium=member_android)|
+| Home | Edisson Esteban Cantor Padilla Student.
+Github's profile:(https://github.com/edescan09)
+LinkedIn: (https://www.linkedin.com/in/edisson-esteban-cantor-padilla-ba79a3428?utm_source=share_via&utm_content=profile&utm_medium=member_android)|
 | About | I’m an 18-year-old young adult who enjoys creating personal projects to practice my programming skills. I’m a student at Uniespinal University and a future web programming technician. |
 | Skills | Your technical and professional skills |
 | Resume | Your education and your experience |
