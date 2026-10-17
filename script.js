@@ -206,3 +206,8 @@ function cerrarMenu() {
 function inicializarSkills() {
   console.log("Skills initialized");
 }
+
+// Agregar al final de todo tu script.js:
+document.addEventListener("DOMContentLoaded", () => {
+  aplicarIdioma("es");
+});
