@@ -1,351 +1,259 @@
-<!DOCTYPE html>
-<!--
-  ============================================================
-  WEB PROFILE TEMPLATE  ·  Técnico Profesional en Programación Web
-  Institución Universitaria de El Espinal - UniEspinal
-  Inglés I / Inglés II
-  ============================================================
 
-  HOW TO USE THIS FILE
-  1. Replace every text inside [square brackets] with your own information.
-  2. Every visible text has a data-i18n attribute. The actual words live in
-     script.js, inside the ES and EN dictionaries. Edit them there.
-  3. Do NOT delete the data-i18n attributes. They connect this file to the
-     language switcher.
-  4. Never add your home address, your phone number or your ID number.
-     A public profile does not need them.
-  ============================================================
--->
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/* =========================================================
+   PORTAFOLIO DE EDISSION CANTOR
+   Sistema de idiomas: Español / English
+   Compatible con el index.html actual
+   ========================================================= */
 
-  <!-- [Replace with your name] -->
-  <title>Edisson Cantor · Web Developer</title>
-  <meta name="description" content="[One short line about you. Example: Junior web developer and technical support technician based in Colombia.]">
+/*
+  IMPORTANTE:
+  Las claves deben coincidir exactamente con los atributos
+  data-i18n del archivo index.html.
+*/
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="style.css">
-</head>
+const TRADUCCIONES = {
+    es: {
+        // Navegación
+        "nav.home": "INICIO",
+        "nav.about": "SOBRE MÍ",
+        "nav.skills": "HABILIDADES",
+        "nav.resume": "FORMACIÓN",
+        "nav.portfolio": "PROYECTOS",
+        "nav.contact": "CONTACTO",
 
-<body>
+        // Presentación
+        "hero.role": "Desarrollador Web · Soporte Técnico",
 
-  <!-- ========================= HEADER ========================= -->
-  <div class="contenedor-header">
-    <header>
-      <div class="logo">
-        <!-- [Replace with your name or a short nickname] -->
-        <a href="#inicio">Edisson Cantor</a>
-      </div>
+        // Sobre mí
+        "about.title": "Sobre Mí",
+        "about.text": "Soy un joven de 18 años que disfruta creando proyectos personales para practicar mis habilidades de programación. Soy estudiante de la Universidad UniEspinal y futuro técnico en programación web.",
+        "about.infoTitle": "Información",
+        "about.labelLocation": "Ubicación",
+        "about.valueLocation": "Girardot, Colombia",
+        "about.labelEmail": "Correo",
+        "about.labelLanguages": "Idiomas",
+        "about.valueLanguages": "Español (nativo) · Inglés (B2-C1)",
+        "about.labelStatus": "Disponibilidad",
+        "about.valueStatus": "Abierto a prácticas",
+        "about.interestsTitle": "Intereses",
 
-      <nav id="nav">
-        <ul>
-          <li><a href="#inicio"     data-i18n="nav.home"      onclick="cerrarMenu()">INICIO</a></li>
-          <li><a href="#sobremi"    data-i18n="nav.about"     onclick="cerrarMenu()">SOBRE MÍ</a></li>
-          <li><a href="#skills"     data-i18n="nav.skills"    onclick="cerrarMenu()">SKILLS</a></li>
-          <li><a href="#curriculum" data-i18n="nav.resume"    onclick="cerrarMenu()">FORMACIÓN</a></li>
-          <li><a href="#portfolio"  data-i18n="nav.portfolio" onclick="cerrarMenu()">PROYECTOS</a></li>
-          <li><a href="#contacto"   data-i18n="nav.contact"   onclick="cerrarMenu()">CONTACTO</a></li>
-        </ul>
-      </nav>
+        // Intereses
+        "interest.1": "CÓDIGO",
+        "interest.2": "SOPORTE",
+        "interest.3": "LECTURA",
+        "interest.4": "JUEGOS",
 
-      <div class="acciones-header">
-        <!-- LANGUAGE SWITCHER -->
-        <button id="btn-idioma"
-                class="btn-idioma"
-                type="button"
-                onclick="cambiarIdioma()"
-                aria-label="Switch to English">
-          <span class="idioma-activo">ES</span><span class="idioma-sep">/</span><span class="idioma-inactivo">EN</span>
-        </button>
+        // Habilidades
+        "skills.title": "Habilidades",
+        "skills.technical": "Habilidades técnicas",
+        "skills.professional": "Habilidades profesionales",
+        "skill.support": "Soporte al usuario",
+        "skill.teamwork": "Trabajo en equipo",
+        "skill.problem": "Resolución de problemas",
+        "skill.english": "Inglés técnico",
 
-        <button class="nav-responsive" type="button" onclick="mostrarOcultarMenu()" aria-label="Menu">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-      </div>
-    </header>
-  </div>
+        // Formación y experiencia
+        "resume.title": "Formación y experiencia",
+        "resume.education": "Formación",
+        "resume.experience": "Experiencia",
 
-  <!-- ========================= HERO ========================= -->
-  <section id="inicio" class="inicio">
-    <div class="contenido-banner">
-      <div class="contenedor-img">
-        <!-- [Replace profile.jpg with your own photo. Square image works best.] -->
-        <img src="images/profile.jpg" alt="Profile photo" onerror="this.style.display='none'">
-      </div>
+        // Formación académica
+        "edu.1.title": "Técnico Profesional en Programación Web",
+        "edu.1.text": "Aprendo un poco de todo: programación en PHP y JavaScript, bases de datos, configuración de servidores y más.",
 
-      <!-- [Replace with your full name] -->
-      <h1>Edisson Cantor</h1>
-      <h2 data-i18n="hero.role">Desarrollador Web · Soporte Técnico</h2>
+        "edu.2.title": "Certificación de B2 en inglés",
+        "edu.2.text": "Aprendí a mantener una conversación fluida en inglés.",
 
-      <div class="redes">
-        <!-- [Replace the # with your real profile links. Delete the ones you do not use.] -->
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="mailto:[your.email@example.com]" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-      </div>
-    </div>
-  </section>
+        // Experiencia
+        "exp.1.title": "Videojuegos",
+        "exp.1.text": "Desarrollé dos videojuegos utilizando Godot, lo que me permitió conocer mejor el mundo de la programación de videojuegos.",
 
-  <!-- ========================= ABOUT ========================= -->
-  <section id="sobremi" class="sobremi">
-    <div class="contenido-seccion">
-      <h2 data-i18n="about.title">Sobre Mí</h2>
+        "exp.2.title": "Rol o tipo de proyecto",
+        "exp.2.text": "Qué hiciste, con qué herramientas y qué resultado tuvo.",
 
-      <p data-i18n="about.text">
-        Soy un joven de 18 años que disfruta creando proyectos personales para practicar mis habilidades de programación. Soy estudiante de la Universidad Uniespinal y futuro técnico en programación web.
-      </p>
+        // Proyectos
+        "portfolio.title": "Proyectos",
 
-      <div class="fila">
-        <div class="col">
-          <h3 data-i18n="about.infoTitle">Información</h3>
-          <!--
-            SAFE FIELDS ONLY.
-            Do not add: home address, phone number, ID number, date of birth.
-          -->
-          <ul class="datos">
-            <li>
-              <strong data-i18n="about.labelLocation">Ubicación</strong>
-              <span data-i18n="about.valueLocation"> Girardot, Colombia </span>
-            </li>
-            <li>
-              <strong data-i18n="about.labelEmail">Correo</strong>
-              <span>edescan09@gmail.com</span>
-            </li>
-            <li>
-              <strong data-i18n="about.labelLanguages"> Idiomas </strong>
-              <span data-i18n="about.valueLanguages"> Español (nativo) · Inglés (B2-C1) </span>
-            </li>
-            <li>
-              <strong data-i18n="about.labelStatus">Disponibilidad</strong>
-              <span class="destacado" data-i18n="about.valueStatus">Abierto a prácticas</span>
-            </li>
-          </ul>
-        </div>
+        "project.1.title": "MILO",
+        "project.1.text": "Desarrollado en Godot",
 
-        <div class="col">
-          <h3 data-i18n="about.interestsTitle">Intereses</h3>
-          <div class="contenedor-intereses">
-            <!-- [Change icons and labels. Keep between 4 and 6.] -->
-            <div class="interes">
-              <i class="fa-solid fa-code"></i>
-              <span data-i18n="interest.1">CÓDIGO</span>
-            </div>
-            <div class="interes">
-              <i class="fa-solid fa-headset"></i>
-              <span data-i18n="interest.2">SOPORTE</span>
-            </div>
-            <div class="interes">
-              <i class="fa-solid fa-book-open"></i>
-              <span data-i18n="interest.3">LECTURA</span>
-            </div>
-            <div class="interes">
-              <i class="fa-solid fa-gamepad"></i>
-              <span data-i18n="interest.4">JUEGOS</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        "project.2.title": "A Normal Day",
+        "project.2.text": "Desarrollado en Godot",
 
-  <!-- ========================= SKILLS ========================= -->
-  <!--
-    To change a skill: edit the label, and edit data-percent.
-    The bar width and the number are both taken from data-percent,
-    so you only change it in ONE place.
-  -->
-  <section id="skills" class="skills">
-    <div class="contenido-seccion">
-      <h2 data-i18n="skills.title">Habilidades</h2>
+        "project.3.title": "Mascotas QR",
+        "project.3.text": "TypeScript + Supabase",
 
-      <div class="fila">
-        <div class="col">
-          <h3 data-i18n="skills.technical">Habilidades técnicas</h3>
+        // Contacto
+        "contact.title": "Contacto",
+        "contact.intro": "Si quieres conocer más sobre mis proyectos o colaborar conmigo, ¡no dudes en escribirme!",
+        "contact.emailLabel": "Correo",
+        "contact.linkedinValue": "https://www.linkedin.com/in/edisson-esteban-cantor-padilla-ba79a3428?utm_source=share_via&utm_content=profile&utm_medium=member_android",
 
-          <div class="skill">
-            <span class="skill-nombre">HTML &amp; CSS</span>
-            <div class="barra-skill"><div class="progreso" data-percent="70"><span>70%</span></div></div>
-          </div>
-          <div class="skill">
-            <span class="skill-nombre">JavaScript</span>
-            <div class="barra-skill"><div class="progreso" data-percent="55"><span>55%</span></div></div>
-          </div>
-          <div class="skill">
-            <span class="skill-nombre">MySQL</span>
-            <div class="barra-skill"><div class="progreso" data-percent="45"><span>45%</span></div></div>
-          </div>
-          <div class="skill">
-            <span class="skill-nombre">Git &amp; GitHub</span>
-            <div class="barra-skill"><div class="progreso" data-percent="60"><span>60%</span></div></div>
-          </div>
-        </div>
+        // Pie de página
+        "footer.note": "Edisson Esteban Cantor Padilla · Técnico Profesional en Programación Web · UniEspinal"
+    },
 
-        <div class="col">
-          <h3 data-i18n="skills.professional">Habilidades profesionales</h3>
+    en: {
+        // Navigation
+        "nav.home": "HOME",
+        "nav.about": "ABOUT ME",
+        "nav.skills": "SKILLS",
+        "nav.resume": "EDUCATION",
+        "nav.portfolio": "PROJECTS",
+        "nav.contact": "CONTACT",
 
-          <div class="skill">
-            <span class="skill-nombre" data-i18n="skill.support">Soporte al usuario</span>
-            <div class="barra-skill"><div class="progreso" data-percent="80"><span>80%</span></div></div>
-          </div>
-          <div class="skill">
-            <span class="skill-nombre" data-i18n="skill.teamwork">Trabajo en equipo</span>
-            <div class="barra-skill"><div class="progreso" data-percent="85"><span>85%</span></div></div>
-          </div>
-          <div class="skill">
-            <span class="skill-nombre" data-i18n="skill.problem">Resolución de problemas</span>
-            <div class="barra-skill"><div class="progreso" data-percent="75"><span>75%</span></div></div>
-          </div>
-          <div class="skill">
-            <span class="skill-nombre" data-i18n="skill.english">Inglés técnico</span>
-            <div class="barra-skill"><div class="progreso" data-percent="65"><span>65%</span></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        // Introduction
+        "hero.role": "Web Developer · Technical Support",
 
-  <!-- ========================= RESUME ========================= -->
-  <section id="curriculum" class="curriculum">
-    <div class="contenido-seccion">
-      <h2 data-i18n="resume.title">Formación y experiencia</h2>
+        // About me
+        "about.title": "About Me",
+        "about.text": "I am an 18-year-old who enjoys creating personal projects to practice my programming skills. I am a student at UniEspinal University, working toward becoming a professional web programming technician.",
+        "about.infoTitle": "Information",
+        "about.labelLocation": "Location",
+        "about.valueLocation": "Girardot, Colombia",
+        "about.labelEmail": "Email",
+        "about.labelLanguages": "Languages",
+        "about.valueLanguages": "Spanish (native) · English (B2-C1)",
+        "about.labelStatus": "Availability",
+        "about.valueStatus": "Open to internships",
+        "about.interestsTitle": "Interests",
 
-      <div class="fila">
-        <!-- EDUCATION -->
-        <div class="col izquierda">
-          <h3 data-i18n="resume.education">Formación</h3>
+        // Interests
+        "interest.1": "CODING",
+        "interest.2": "SUPPORT",
+        "interest.3": "READING",
+        "interest.4": "GAMING",
 
-          <div class="item izq">
-            <h4 data-i18n="edu.1.title">Técnico Profesional en Programación Web</h4>
-            <span class="casa">UniEspinal</span>
-            <span class="fecha">2025 - 2029</span>
-            <p data-i18n="edu.1.text">Aprendo un poco de todo, a programar código ya sea php o javascript, las bases de datos, configuracion de servidores, etc.</p>
-            <div class="conectori"><div class="circuloi"></div></div>
-          </div>
+        // Skills
+        "skills.title": "Skills",
+        "skills.technical": "Technical Skills",
+        "skills.professional": "Professional Skills",
+        "skill.support": "User Support",
+        "skill.teamwork": "Teamwork",
+        "skill.problem": "Problem Solving",
+        "skill.english": "Technical English",
 
-          <div class="item izq">
-            <h4 data-i18n="edu.2.title">Certificación de B2 en inglés.</h4>
-            <span class="casa">King's school</span>
-            <span class="fecha">2025</span>
-            <p data-i18n="edu.2.text">Aprendi a cómo manejar una conversación fluida en inglés.</p>
-            <div class="conectori"><div class="circuloi"></div></div>
-          </div>
-        </div>
+        // Education and experience
+        "resume.title": "Education and Experience",
+        "resume.education": "Education",
+        "resume.experience": "Experience",
 
-        <!-- EXPERIENCE -->
-        <div class="col derecha">
-          <h3 data-i18n="resume.experience">Experiencia</h3>
+        // Education
+        "edu.1.title": "Professional Technician in Web Programming",
+        "edu.1.text": "I learn a variety of skills, including PHP and JavaScript programming, databases, server configuration, and more.",
 
-          <!--
-            No work experience yet? That is normal.
-            Use academic projects, volunteer work or freelance jobs.
-            Describe what you DID, using action verbs: built, configured, fixed, tested.
-          -->
-          <div class="item der">
-            <h4 data-i18n="exp.1.title">Videojuegos</h4>
-            <span class="casa">Proyecto propio</span>
-            <span class="fecha">2026</span>
-            <p data-i18n="exp.1.text">Hice 2 videojuegos usando la herramienta GODOT, esto me permitió conocer más el mundo del code para videojuegos.</p>
-            <div class="conectord"><div class="circulod"></div></div>
-          </div>
+        "edu.2.title": "B2 English Certification",
+        "edu.2.text": "I learned how to maintain fluent conversations in English.",
 
-          <div class="item der">
-            <h4 data-i18n="exp.2.title">Rol o tipo de proyecto</h4>
-            <span class="casa">Empresa, institución o proyecto propio</span>
-            <span class="fecha">Año</span>
-            <p data-i18n="exp.2.text">Qué hiciste, con qué herramientas y qué resultado tuvo.</p>
-            <div class="conectord"><div class="circulod"></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        // Experience
+        "exp.1.title": "Video Games",
+        "exp.1.text": "I developed two video games using Godot, which helped me learn more about the world of video game programming.",
 
-  <!-- ========================= PORTFOLIO ========================= -->
-  <!--
-    This is the most important section for a junior developer.
-    Three finished small projects are better than ten unfinished ones.
-    Every card should link to the live project or to its repository.
-  -->
-  <section id="portfolio" class="portfolio">
-    <div class="contenido-seccion">
-      <h2 data-i18n="portfolio.title">Proyectos</h2>
+        "exp.2.title": "Role or Project Type",
+        "exp.2.text": "Describe what you did, which tools you used, and the results you achieved.",
 
-      <div class="galeria">
-        <a class="proyecto" href="#" target="_blank" rel="noopener">
-          <img src="images/project-1.png" alt="Project 1" onerror="this.style.opacity=0">
-          <div class="overlay">
-            <h3 data-i18n="project.1.title">MILO</h3>
-            <p data-i18n="project.1.text">Made in GODOT</p>
-          </div>
-        </a>
+        // Projects
+        "portfolio.title": "Projects",
 
-        <a class="proyecto" href="#" target="_blank" rel="noopener">
-          <img src="images/project-2.png" alt="Project 2" onerror="this.style.opacity=0">
-          <div class="overlay">
-            <h3 data-i18n="project.2.title">A Normal Day</h3>
-            <p data-i18n="project.2.text">Made in GODOT</p>
-          </div>
-        </a>
+        "project.1.title": "MILO",
+        "project.1.text": "Developed with Godot",
 
-        <a class="proyecto" href="#" target="_blank" rel="noopener">
-          <img src="images/project-3.png" alt="Project 3" onerror="this.style.opacity=0">
-          <div class="overlay">
-            <h3 data-i18n="project.3.title">Mascotas QR</h3>
-            <p data-i18n="project.3.text">TypeScript + Supabase</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
+        "project.2.title": "A Normal Day",
+        "project.2.text": "Developed with Godot",
 
-  <!-- ========================= CONTACT ========================= -->
-  <!--
-    A contact form needs a server to work. This template uses direct links
-    instead, so nothing here is decorative: every button really does something.
-  -->
-  <section id="contacto" class="contacto">
-    <div class="contenido-seccion">
-      <h2 data-i18n="contact.title">Contacto</h2>
-      <p class="contacto-intro" data-i18n="contact.intro">
-        Una frase invitando a escribirte.
-      </p>
+        "project.3.title": "QR Pet Identification",
+        "project.3.text": "TypeScript + Supabase",
 
-      <div class="tarjetas-contacto">
-        <a class="tarjeta" href="mailto:[your.email@example.com]">
-          <i class="fa-solid fa-envelope"></i>
-          <strong data-i18n="contact.emailLabel">Correo</strong>
-          <span>edescan09@gmail.com</span>
-        </a>
+        // Contact
+        "contact.title": "Contact",
+        "contact.intro": "If you would like to learn more about my projects or collaborate with me, feel free to get in touch!",
+        "contact.emailLabel": "Email",
+        "contact.linkedinValue": "https://www.linkedin.com/in/edisson-esteban-cantor-padilla-ba79a3428?utm_source=share_via&utm_content=profile&utm_medium=member_android",
 
-        <a class="tarjeta" href="#" target="_blank" rel="noopener">
-          <i class="fa-brands fa-github"></i>
-          <strong>GitHub</strong>
-          <span>https://github.com/edescan09</span>
-        </a>
+        // Footer
+        "footer.note": "Edisson Esteban Cantor Padilla · Professional Technician in Web Programming · UniEspinal"
+    }
+};
 
-        <a class="tarjeta" href="#" target="_blank" rel="noopener">
-          <i class="fa-brands fa-linkedin-in"></i>
-          <strong>LinkedIn</strong>
-          <span data-i18n="contact.linkedinValue">https://www.linkedin.com/in/edisson-esteban-cantor-padilla-ba79a3428?utm_source=share_via&utm_content=profile&utm_medium=member_android</span>
-        </a>
-      </div>
-    </div>
-  </section>
 
-  <!-- ========================= FOOTER ========================= -->
-  <footer>
-    <a href="#inicio" class="arriba" aria-label="Back to top">
-      <i class="fa-solid fa-angles-up"></i>
-    </a>
-    <p class="footer-nota" data-i18n="footer.note">
-      Edisson Esteban Cantor Padilla · Técnico Profesional en Programación Web · UniEspinal
-    </p>
-  </footer>
+// Idioma inicial
+let idiomaActual = "es";
 
-  <script src="script.js"></script>
-</body>
-</html>
+
+/* =========================================================
+   CAMBIAR IDIOMA
+   ========================================================= */
+
+function cambiarIdioma() {
+    idiomaActual = idiomaActual === "es" ? "en" : "es";
+    aplicarIdioma(idiomaActual);
+}
+
+
+/* =========================================================
+   APLICAR TRADUCCIONES
+   ========================================================= */
+
+function aplicarIdioma(idioma) {
+    const traducciones = TRADUCCIONES[idioma];
+
+    // Evita modificar la página si el idioma no existe.
+    if (!traducciones) {
+        return;
+    }
+
+    // Traducir únicamente los elementos que tienen data-i18n.
+    document.querySelectorAll("[data-i18n]").forEach((elemento) => {
+        const clave = elemento.getAttribute("data-i18n");
+
+        // Si existe la traducción, actualizar el texto.
+        // Si falta una clave, conservar el contenido actual.
+        if (Object.prototype.hasOwnProperty.call(traducciones, clave)) {
+            elemento.textContent = traducciones[clave];
+        }
+    });
+
+    // Actualizar el idioma del documento.
+    document.documentElement.lang = idioma;
+
+    // Actualizar el botón de idioma.
+    const botonIdioma = document.getElementById("btn-idioma");
+
+    if (botonIdioma) {
+        botonIdioma.setAttribute(
+            "aria-label",
+            idioma === "es" ? "Cambiar a inglés" : "Switch to Spanish"
+        );
+
+        const idiomaActivo = botonIdioma.querySelector(".idioma-activo");
+        const idiomaInactivo = botonIdioma.querySelector(".idioma-inactivo");
+
+        if (idiomaActivo && idiomaInactivo) {
+            idiomaActivo.textContent = idioma.toUpperCase();
+            idiomaInactivo.textContent = idioma === "es" ? "EN" : "ES";
+        }
+    }
+}
+
+
+/* =========================================================
+   MENÚ RESPONSIVE
+   Mantiene el funcionamiento de los botones del index.html.
+   ========================================================= */
+
+function mostrarOcultarMenu() {
+    const nav = document.getElementById("nav");
+
+    if (nav) {
+        nav.classList.toggle("responsive");
+    }
+}
+
+
+function cerrarMenu() {
+    const nav = document.getElementById("nav");
+
+    if (nav) {
+        nav.classList.remove("responsive");
+    }
+}
