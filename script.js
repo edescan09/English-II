@@ -1,17 +1,7 @@
 /* ============================================================
    WEB PROFILE TEMPLATE - SCRIPT
    UniEspinal · Técnico Profesional en Programación Web
-
-   THIS IS THE FILE YOU WILL WORK ON THE MOST.
-
-   Below there are two dictionaries: ES and EN.
-   They have exactly the same keys, but different texts.
-
-   IMPORTANT: the English version is NOT a translation of the
-   Spanish version. A professional profile in English follows
-   different rules. Read NOTES.md before you write it.
    ============================================================ */
-
 
 /* ------------------------------------------------------------
    1. SPANISH TEXTS
@@ -56,43 +46,38 @@ const ES = {
   "resume.experience": "Experiencia",
 
   "edu.1.title": "Técnico Profesional en Programación Web",
-  "edu.1.text":  "Estudiante en UniEspinal enfocado en el desarrollo frontend, backend básico y gestión de bases de datos relacionales.",
-  "edu.2.title": "[Curso o certificación]",
-  "edu.2.text":  "[Qué aprendiste y para qué te sirve.]",
+  "edu.1.text":  "Aprendo un poco de todo, a programar código ya sea php o javascript, las bases de datos, configuracion de servidores, etc.",
+  "edu.2.title": "Certificación de B2 en inglés",
+  "edu.2.text":  "Aprendí a cómo manejar una conversación fluida en inglés.",
 
-  "exp.1.title": "[Rol o tipo de proyecto]",
-  "exp.1.text":  "[Qué hiciste, con qué herramientas y qué resultado tuvo.]",
-  "exp.2.title": "[Rol o tipo de proyecto]",
-  "exp.2.text":  "[Qué hiciste, con qué herramientas y qué resultado tuvo.]",
+  "exp.1.title": "Videojuegos",
+  "exp.1.text":  "Hice 2 videojuegos usando la herramienta GODOT, esto me permitió conocer más el mundo del código para videojuegos.",
+  "exp.2.title": "Desarrollo de Software",
+  "exp.2.text":  "Creación y mantenimiento de aplicaciones web usando JavaScript, TypeScript y bases de datos.",
 
   "portfolio.title": "Proyectos",
-  "project.1.title": "[Nombre del proyecto]",
-  "project.1.text":  "[Tecnologías usadas]",
-  "project.2.title": "[Nombre del proyecto]",
-  "project.2.text":  "[Tecnologías usadas]",
-  "project.3.title": "[Nombre del proyecto]",
-  "project.3.text":  "[Tecnologías usadas]",
+  "project.1.title": "MILO",
+  "project.1.text":  "Made in GODOT",
+  "project.2.title": "A Normal Day",
+  "project.2.text":  "Made in GODOT",
+  "project.3.title": "Mascotas QR",
+  "project.3.text":  "TypeScript + Supabase",
 
   "contact.title":         "Contacto",
   "contact.intro":         "¿Tienes un proyecto o una vacante? Escríbeme y nos ponemos en contacto.",
   "contact.emailLabel":    "Correo",
-  "contact.linkedinValue": "://linkedin.com",
+  "contact.linkedinValue": "https://www.linkedin.com/in/edisson-esteban-cantor-padilla-ba79a3428",
 
-  "footer.note": "Edisson Cantor · Técnico Profesional en Programación Web · UniEspinal"
+  "footer.note": "Edisson Esteban Cantor Padilla · Técnico Profesional en Programación Web · UniEspinal"
 };
 
 
 /* ------------------------------------------------------------
    2. ENGLISH TEXTS
-
-   Before writing this section, remember:
-   - Use action verbs: built, configured, fixed, tested, supported.
-   - Do not include age, marital status or a home address.
-   - Do not translate word by word. Rewrite.
    ------------------------------------------------------------ */
 const EN = {
   "nav.home":      "HOME",
-  "nav.about":     "ABOUT",
+  "nav.about":     "ABOUT ME",
   "nav.skills":    "SKILLS",
   "nav.resume":    "RESUME",
   "nav.portfolio": "PROJECTS",
@@ -101,7 +86,7 @@ const EN = {
   "hero.role": "Web Developer · Technical Support",
 
   "about.title":          "About Me",
-  "about.text":           "I am an 18-year-old developer who builds personal projects to strengthen my programming skills. I am a Web Programming student at UniEspinal focused on creating clean and efficient web solutions.",
+  "about.text":           "I am an 18-year-old developer who enjoys creating personal projects to practice my programming skills. I am a student at UniEspinal studying to become a Web Programming Technician.",
   "about.infoTitle":      "Information",
   "about.labelLocation":  "Location",
   "about.valueLocation":  "Girardot, Colombia",
@@ -125,40 +110,39 @@ const EN = {
   "skill.problem":       "Problem solving",
   "skill.english":       "Technical English",
 
-  "resume.title":      "Education and experience",
+  "resume.title":      "Education and Experience",
   "resume.education":  "Education",
   "resume.experience": "Experience",
 
   "edu.1.title": "Professional Technician in Web Programming",
-  "edu.1.text":  "Student at UniEspinal learning frontend technologies, responsive design, and database management.",
-  "edu.2.title": "[Course or certificate]",
-  "edu.2.text":  "[What you learned and how you use it.]",
+  "edu.1.text":  "Learning web development fundamentals including PHP, JavaScript, databases, and server configuration.",
+  "edu.2.title": "B2 English Certification",
+  "edu.2.text":  "Achieved fluent conversational English communication skills.",
 
-  "exp.1.title": "[Role or type of project]",
-  "exp.1.text":  "[What you did, which tools you used, and what the result was.]",
-  "exp.2.title": "[Role or type of project]",
-  "exp.2.text":  "[What you did, which tools you used, and what the result was.]",
+  "exp.1.title": "Video Games",
+  "exp.1.text":  "Developed 2 video games using Godot Engine, expanding my knowledge of game logic and coding principles.",
+  "exp.2.title": "Software Development",
+  "exp.2.text":  "Building and maintaining web applications using JavaScript, TypeScript, and databases.",
 
   "portfolio.title": "Projects",
-  "project.1.title": "[Project name]",
-  "project.1.text":  "[Technologies used]",
-  "project.2.title": "[Project name]",
-  "project.2.text":  "[Technologies used]",
-  "project.3.title": "[Project name]",
-  "project.3.text":  "[Technologies used]",
+  "project.1.title": "MILO",
+  "project.1.text":  "Made in GODOT",
+  "project.2.title": "A Normal Day",
+  "project.2.text":  "Made in GODOT",
+  "project.3.title": "Mascotas QR",
+  "project.3.text":  "TypeScript + Supabase",
 
   "contact.title":         "Contact",
-  "contact.intro":         "Do you have a project or a vacancy? Send me a message.",
+  "contact.intro":         "Do you have a project or job opening? Feel free to write me.",
   "contact.emailLabel":    "Email",
-  "contact.linkedinValue": "://linkedin.com",
+  "contact.linkedinValue": "https://www.linkedin.com/in/edisson-esteban-cantor-padilla-ba79a3428",
 
-  "footer.note": "Edisson Cantor · Professional Technician in Web Programming · UniEspinal"
+  "footer.note": "Edisson Esteban Cantor Padilla · Professional Technician in Web Programming · UniEspinal"
 };
 
 
 /* ============================================================
    3. LANGUAGE SWITCHER
-   You do not need to change the code below.
    ============================================================ */
 
 const DICCIONARIOS = { es: ES, en: EN };
@@ -219,7 +203,6 @@ function cerrarMenu() {
 /* ============================================================
    5. SKILL BARS
    ============================================================ */
-// Nota: Dejé esta función declarada correctamente al final del archivo
 function inicializarSkills() {
   console.log("Skills initialized");
 }
