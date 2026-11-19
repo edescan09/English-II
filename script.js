@@ -1,6 +1,10 @@
 /* ============================================================
-   WEB PROFILE TEMPLATE - SCRIPT
+   WEB PROFILE - SCRIPT
    UniEspinal · Técnico Profesional en Programación Web
+
+   IMPORTANTE: todo elemento del index.html que tenga data-i18n
+   se reemplaza al cargar la página por el texto de estos
+   diccionarios. Para cambiar un texto, cámbialo AQUÍ, en ES y en EN.
    ============================================================ */
 
 /* ------------------------------------------------------------
@@ -46,14 +50,15 @@ const ES = {
   "resume.experience": "Experiencia",
 
   "edu.1.title": "Técnico Profesional en Programación Web",
-  "edu.1.text":  "Aprendo un poco de todo, a programar código ya sea php o javascript, las bases de datos, configuracion de servidores, etc.",
+  "edu.1.text":  "Aprendo un poco de todo: programar en PHP o JavaScript, bases de datos, configuración de servidores, etc.",
   "edu.2.title": "Certificación de B2 en inglés",
-  "edu.2.text":  "Aprendí a cómo manejar una conversación fluida en inglés.",
+  "edu.2.text":  "Aprendí a manejar una conversación fluida en inglés.",
 
   "exp.1.title": "Videojuegos",
+  "exp.1.house": "Proyecto propio",
   "exp.1.text":  "Hice 2 videojuegos usando la herramienta GODOT, esto me permitió conocer más el mundo del código para videojuegos.",
-  "exp.2.title": "Desarrollo de Software",
-  "exp.2.text":  "Creación y mantenimiento de aplicaciones web usando JavaScript, TypeScript y bases de datos.",
+  "exp.2.title": "Proyecto Universitario",
+  "exp.2.text":  "Se desarrolló RutaSafe con Laravel 12, MySQL, JavaScript y Leaflet para registrar rutas y reportar incidentes viales con foto y ubicación. El resultado fue una plataforma web funcional para estudiantes, profesores y administradores de UNIESPINAL.",
 
   "portfolio.title": "Proyectos",
   "project.1.title": "MILO",
@@ -115,14 +120,15 @@ const EN = {
   "resume.experience": "Experience",
 
   "edu.1.title": "Professional Technician in Web Programming",
-  "edu.1.text":  "Learning web development fundamentals including PHP, JavaScript, databases, and server configuration.",
+  "edu.1.text":  "I am learning web development fundamentals, including PHP, JavaScript, databases and server configuration.",
   "edu.2.title": "B2 English Certification",
-  "edu.2.text":  "Achieved fluent conversational English communication skills.",
+  "edu.2.text":  "I learned how to hold a fluent conversation in English.",
 
   "exp.1.title": "Video Games",
-  "exp.1.text":  "Developed 2 video games using Godot Engine, expanding my knowledge of game logic and coding principles.",
-  "exp.2.title": "Software Development",
-  "exp.2.text":  "Building and maintaining web applications using JavaScript, TypeScript, and databases.",
+  "exp.1.house": "Personal project",
+  "exp.1.text":  "I made 2 video games using the Godot Engine, which helped me learn more about game coding.",
+  "exp.2.title": "University Project",
+  "exp.2.text":  "RutaSafe was developed with Laravel 12, MySQL, JavaScript and Leaflet to record routes and report road incidents with a photo and location. The result was a working web platform for UNIESPINAL students, teachers and administrators.",
 
   "portfolio.title": "Projects",
   "project.1.title": "MILO",
@@ -133,7 +139,7 @@ const EN = {
   "project.3.text":  "TypeScript + Supabase",
 
   "contact.title":         "Contact",
-  "contact.intro":         "Do you have a project or job opening? Feel free to write me.",
+  "contact.intro":         "Do you have a project or a job opening? Feel free to write to me.",
   "contact.emailLabel":    "Email",
   "contact.linkedinValue": "https://www.linkedin.com/in/edisson-esteban-cantor-padilla-ba79a3428",
 
@@ -202,12 +208,39 @@ function cerrarMenu() {
 
 /* ============================================================
    5. SKILL BARS
+   El ancho de cada barra sale de su atributo data-percent.
+   Se llenan con animación cuando la sección entra en pantalla.
    ============================================================ */
-function inicializarSkills() {
-  console.log("Skills initialized");
+function llenarBarras() {
+  document.querySelectorAll(".progreso").forEach(barra => {
+    barra.style.width = barra.dataset.percent + "%";
+  });
 }
 
-// Agregar al final de todo tu script.js:
+function inicializarSkills() {
+  const seccion = document.getElementById("skills");
+
+  // Si el navegador no soporta IntersectionObserver, se llenan de una vez.
+  if (!seccion || !("IntersectionObserver" in window)) {
+    llenarBarras();
+    return;
+  }
+
+  const observador = new IntersectionObserver((entradas, obs) => {
+    if (entradas.some(e => e.isIntersecting)) {
+      llenarBarras();
+      obs.disconnect();
+    }
+  }, { threshold: 0.2 });
+
+  observador.observe(seccion);
+}
+
+
+/* ============================================================
+   6. START
+   ============================================================ */
 document.addEventListener("DOMContentLoaded", () => {
   aplicarIdioma("es");
+  inicializarSkills();
 });
